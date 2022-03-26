@@ -5,6 +5,8 @@ from django.shortcuts import render
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 
 
+class AccountappLogin(Login)
+
 class AccountAppCreate(CreateView):
 
       form_class = UserCreationForm
