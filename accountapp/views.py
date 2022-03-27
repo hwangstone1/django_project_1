@@ -11,9 +11,6 @@ def hello_world(request):
     return render(request, 'accountapp/hello_world.html')
 
 
-class AccountappLogin():
-    pass
-
 
 class AccountAppCreate(CreateView):
 
