@@ -5,18 +5,25 @@ from django.shortcuts import render
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 
 
-class AccountappLogin(Login)
+def hello_world(request):
+    return render(request, 'accountapp/hello_world.html')
+
+
+class AccountappLogin():
+    pass
+
 
 class AccountAppCreate(CreateView):
 
-      form_class = UserCreationForm
-      template_name = 'forms.html'
+    pass
 
 class AccountAppDetail(DetailView):
     pass
 
+
 class AccountAppUpdate(UpdateView):
     pass
+
 
 class AccountAppDelete(DeleteView):
     pass
