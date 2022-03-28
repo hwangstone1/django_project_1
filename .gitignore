@@ -7,3 +7,5 @@ db.sqlite3
 __pycache__
 
 DATA_BASE.py
+
+/media
