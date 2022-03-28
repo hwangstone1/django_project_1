@@ -6,6 +6,8 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 
+from accountapp.forms import AccountUpdateForm
+
 
 def hello_world(request):
     return render(request, 'accountapp/hello_world.html')
@@ -29,9 +31,14 @@ class AccountAppDetail(DetailView):
 
 
 class AccountAppUpdate(UpdateView):
-    pass
+    model = User
+    form_class =  AccountUpdateForm
+    success_url = reverse_lazy('accountapp:test')
+    template_name = 'accountapp/update.html'
 
 
 class AccountAppDelete(DeleteView):
-    pass
+    model = User
+    success_url = reverse_lazy('accountapp:login')
+    template_name = 'accountapp/delete.html'
 
