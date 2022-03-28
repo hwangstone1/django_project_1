@@ -11,7 +11,7 @@ def hello_world(request):
     return render(request, 'accountapp/hello_world.html')
 
 
-
+# 회원가입
 class AccountAppCreate(CreateView):
 
 
@@ -20,9 +20,12 @@ class AccountAppCreate(CreateView):
    success_url = reverse_lazy('accountapp:test')
    template_name = 'accountapp/create.html'
 
-
+# 개인 페이지
 class AccountAppDetail(DetailView):
-    pass
+
+    model = User
+    context_object_name = 'target_user'
+    template_name = 'accountapp/detail.html'
 
 
 class AccountAppUpdate(UpdateView):
