@@ -38,6 +38,9 @@
             </a>
         {% endif %}
     </div>
+    <div>
+        {% include 'snippets/list_project.html' with article_list=object_list %}
+    </div>
 </div>
 
 {% endblock %}

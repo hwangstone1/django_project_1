@@ -8,10 +8,11 @@ from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
+from django.views.generic.list import MultipleObjectMixin
 
 from accountapp.decorators import account_ownership_required
 from accountapp.forms import AccountUpdateForm
-
+from articleapp.models import Article
 
 has_ownership = [
    account_ownership_required,
@@ -34,11 +35,19 @@ class AccountAppCreate(CreateView):
     template_name = 'accountapp/create.html'
 
 # 개인 페이지
-class AccountAppDetail(DetailView):
+
+
+class AccountAppDetail(DetailView, MultipleObjectMixin):
 
     model = User
     context_object_name = 'target_user'
     template_name = 'accountapp/detail.html'
+
+    paginate_by = 10
+
+    def get_context_data(self, **kwargs):
+        object_list = Article.objects.filter(writer=self.get_object())
+        return super(AccountAppDetail, self).get_context_data(object_list=object_list, **kwargs)
 
 
 
