@@ -26,6 +26,13 @@
             <span>Signup</span>
         </a>
         {% else %}
+
+        <a href="{% url 'subscribeapp:list' %}">
+            <span>
+            subscribe
+            </span>
+
+        </a>
         <a href="{% url 'accountapp:logout' %}">
             <span>logout</span>
         </a>
