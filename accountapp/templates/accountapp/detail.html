@@ -9,10 +9,10 @@
         <img inlist="width:100%; border-radius: 1rem;"
              src="{{ target_user.profile.image.url }}" alt="" style="height : 10rem; width: 10rem; border-radius: 10rem;margin-bottom : 2rem; object-fit: cover;">
         {% if target_user.profile %}
-            <h2>
+            <h2 style="">
                 {{ target_user.profile.nickname }}
-                <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
-                    edit
+                <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}" class="material-icons-outlined">
+                    <ion-icon name="settings-outline" style="color : black;"></ion-icon>
                 </a>
             </h2>
         {% else %}
