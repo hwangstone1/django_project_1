@@ -1,6 +1,29 @@
+.project_header {
+   font-family : 'Caveat', cursive;
+}
+
+
+
 .main_footer_logo {
         margin:2rem;
         text-align: center;
         font-size: 1.3rem;
         font-family: 'Caveat', cursive ;
+
+}
+
+@media screen and (max-width:500px) {
+    html {
+        font-size:13px;
+    }
+}
+
+a {
+
+    color : black;
+}
+
+a:hover {
+    color : black;
+
 }
